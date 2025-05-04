@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Document</title>
+</head>
+<body class="font-popin bg-background text-bodycolor py-5 px-5">
+   <nav class="flex md:justify-between gap-5 flex-wrap">
+    <div>
+        <p class="text-2xl text-black">Login to get started</p>
+    </div>
+
+    <div>
+    <img src="image/logo.png" alt="baton" class="hidden md:block w-10 h-10">
+    </div>
+
+    <div>
+        <form action="">
+            <input type="text" class="bg-white rounded-3xl py-1 text-center text-xl w-30" placeholder="User">
+            <input type="password" class="bg-white   rounded-3xl text-center text-xl w-30 py-1 " placeholder="PIN">
+            <button class="text-3xl cursor-pointer">&rarr;</button>
+        </form>
+    </div>
+   </nav>
+
+   <section class="max-w-4xl mx-auto mt-20">
+  
+
+    <div class="flex justify-between">
+        <div>
+        <p class="text-2xl">Current Balance</p>
+        <p class="text-lg">As of  <span>1/3/2025</span></p>
+    </div>
+    <p class="text-2xl font-semibold">00000$</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:justify-between gap-10">
+    <div class="bg-white overflow-scroll ">
+      
+
+        <div class="flex border-b-1 border-black p-10  justify-between">
+            <!--deposit-->
+            <div class="text-sm  font-semibold text-center bg-gradient-to-t from-deposit to-deposit1 rounded-full px-3 pt-1 text-white">
+  2 deposit
+            </div>
+            <div class="text-lg">
+                2 days
+            </div>
+            <div class="text-2xl">
+                3333$
+            </div>
+        </div>
+        <div class="flex justify-between p-10 gap-10 border-b-1 border-black">
+            <!--deposit-->
+            <div class="text-sm font-semibold text-center bg-gradient-to-t from-withdraw to-withdraw1 px-3 rounded-full text-white pt-1">
+  2 withdraw
+            </div>
+            <div class="text-lg">
+                2 days
+            </div>
+            <div class="text-2xl">
+                -3333$
+            </div>
+        </div>
+    </div>
+
+
+
+
+ <!--second div-->
+    <div class="flex flex-col gap-6 font-popin">
+        <!--transfer -->
+        <div class="rounded-2xl bg-gradient-to-t from-transfer to-transfer1 p-5">
+            <p class="text-2xl pb-5">Transfer Money</p>
+            <form action="" class="flex flex-wrap gap-5">
+                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
+                    <label for="" class="text-xl">transfer</label></div>
+                
+                    <div>   <input type="number" class="bg-white block w-40 py-1 rounded-2xl">
+                        <label for="" class="text-xl">amount</label></div>
+             
+                <button class=" px-4 py-1 rounded-xl">&rarr;</button>
+            </form>
+        </div>
+        <div class="rounded-2xl bg-gradient-to-t from-loan to-loan1 p-10">
+            <p class="text-2xl pb-5">Request Loan</p>
+            <form action="" class="flex flex-wrap gap-5">
+                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
+                    <label for="" class="text-xl">transfer</label></div>
+                
+                    
+             
+                <button class="px-4 py-1">&rarr;</button>
+            </form>
+        </div>
+        <div class="rounded-2xl bg-gradient-to-t from-close to-close1 p-5">
+            <p class="text-2xl p-5">Close account</p>
+            <form action="" class="flex flex-wrap gap-5">
+                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
+                    <label for="" class="text-xl">Comfrm user</label></div>
+                
+                    <div>   <input type="password" class="bg-white block w-40 py-1 rounded-2xl">
+                        <label for="" class="text-xl">comform password</label></div>
+             
+                <button class=" px-4 py-1">&rarr;</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="flex justify-between pt-8">
+    <div class="flex gap-2">
+    <p>IN <span>200$</span></p>
+    <p>OUT <span>400$</span></p>
+    <p>INTEREST <span>600$</span></p>
+</div>
+<button>sort</button>
+
+<p>You will be logged out in <span>05:00</span></p>
+</div>
+
+   </section>
+
+   
+</body>
+</html>

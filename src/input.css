@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+    --font-popin:"Poppins", sans-serif;
+    --color-background: #f3f3f3; 
+    --color-deposit:#39b385;
+    --color-deposit1:#9be15d;
+    --color-withdraw:#e52a5a;
+    --color-withdraw1:#ff585f;
+    --color-in:#66c873;
+    --color-out:#f5465d;
+    --color-transfer:#ffb003;
+    --color-transfer1:#ffcb03;
+    --color-loan:#39b385;
+    --color-loan1:#9be15d;
+    --color-close:#e52a5a;
+    --color-close1:#ff585f;
+    --color-bodycolor:#444;
+
+  }
