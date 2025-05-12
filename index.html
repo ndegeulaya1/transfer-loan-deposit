@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body class="font-popin bg-background text-bodycolor py-5 px-5">
-   <nav class="flex md:justify-between gap-5 flex-wrap">
+   <nav class="flex md:justify-between gap-5 flex-wrap items-center justify-center">
     <div>
-        <p class="text-2xl text-black">Login to get started</p>
+        <p class="text-2xl text-blue-950 welcome">Login to get started</p>
     </div>
 
     <div>
@@ -18,29 +18,31 @@
 
     <div>
         <form action="">
-            <input type="text" class="bg-white rounded-3xl py-1 text-center text-xl w-30" placeholder="User">
-            <input type="password" class="bg-white   rounded-3xl text-center text-xl w-30 py-1 " placeholder="PIN">
-            <button class="text-3xl cursor-pointer">&rarr;</button>
+            <input type="text" class="bg-white rounded-3xl py-1 text-center text-xl w-30 login__input--user focus:border-amber-50" placeholder="User">
+            <input type="password" class="bg-white   rounded-3xl text-center text-xl w-30 py-1 login__input--pin focus:border-amber-50" placeholder="PIN">
+            <button class="cursor-pointer text-3xl cursor-pointer login__btn">&rarr;</button>
         </form>
     </div>
    </nav>
 
-   <section class="max-w-4xl mx-auto mt-20">
+   <section class="relative max-w-4xl mx-auto mt-20 app hidden >
   
 
     <div class="flex justify-between">
+        <div class="flex justify-between">
         <div>
         <p class="text-2xl">Current Balance</p>
-        <p class="text-lg">As of  <span>1/3/2025</span></p>
+        <p class="text-lg">As of  <span class="date">1/3/2025</span></p>
     </div>
-    <p class="text-2xl font-semibold">00000$</p>
+    <p class="text-2xl font-semibold balance__value">00000$</p>
+</div>
     </div>
 
-    <div class="flex flex-col md:flex-row md:justify-between gap-10">
-    <div class="bg-white overflow-scroll ">
+    <div class="flex flex-col md:flex-row  gap-10">
+    <div class="bg-white  movements max-w-[60rem] h-[40rem] overflow-scroll">
       
 
-        <div class="flex border-b-1 border-black p-10  justify-between">
+        <div class="flex border-b-1 border-black p-10  justify-between deposit">
             <!--deposit-->
             <div class="text-sm  font-semibold text-center bg-gradient-to-t from-deposit to-deposit1 rounded-full px-3 pt-1 text-white">
   2 deposit
@@ -52,8 +54,8 @@
                 3333$
             </div>
         </div>
-        <div class="flex justify-between p-10 gap-10 border-b-1 border-black">
-            <!--deposit-->
+        <div class="flex justify-between p-10 gap-10 border-b-1 border-black withdraw">
+            <!--withdraw-->
             <div class="text-sm font-semibold text-center bg-gradient-to-t from-withdraw to-withdraw1 px-3 rounded-full text-white pt-1">
   2 withdraw
             </div>
@@ -75,55 +77,57 @@
         <div class="rounded-2xl bg-gradient-to-t from-transfer to-transfer1 p-5">
             <p class="text-2xl pb-5">Transfer Money</p>
             <form action="" class="flex flex-wrap gap-5">
-                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
-                    <label for="" class="text-xl">transfer</label></div>
+                <div class="flex flex-col items-center"><input type="text" class="px-4 font-semibold bg-white block w-40 py-1 rounded-2xl form__input--to focus:border-amber-100">
+                    <label for="" class="text-xl text-center">Transfer To</label></div>
                 
-                    <div>   <input type="number" class="bg-white block w-40 py-1 rounded-2xl">
+                    <div class="flex flex-col items-center">   <input type="number" class="px-4 font-semibold focus:border-amber-100 bg-white block w-40 py-1 rounded-2xl form__input--amount">
                         <label for="" class="text-xl">amount</label></div>
              
-                <button class=" px-4 py-1 rounded-xl">&rarr;</button>
+                <button class="text-white cursor-pointer px-4 py-1 rounded-xl form__btn--transfer">&rarr;</button>
             </form>
         </div>
         <div class="rounded-2xl bg-gradient-to-t from-loan to-loan1 p-10">
             <p class="text-2xl pb-5">Request Loan</p>
             <form action="" class="flex flex-wrap gap-5">
-                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
-                    <label for="" class="text-xl">transfer</label></div>
+                <div class="flex flex-col items-center"><input type="text" class="focus:border-amber-100 px-4 font-semibold bg-white block w-40 py-1 rounded-2xl form__input--loan-amount">
+                    <label for="" class="text-xl">Amount</label></div>
                 
                     
              
-                <button class="px-4 py-1">&rarr;</button>
+                <button class="text-white cursor-pointer px-4 py-1 form__btn--loan">&rarr;</button>
             </form>
         </div>
         <div class="rounded-2xl bg-gradient-to-t from-close to-close1 p-5">
             <p class="text-2xl p-5">Close account</p>
             <form action="" class="flex flex-wrap gap-5">
-                <div><input type="text" class="bg-white block w-40 py-1 rounded-2xl">
+                <div class="flex flex-col items-center"><input type="text" class="px-4 font-semibold focus:border-amber-100 bg-white block w-40 py-1 rounded-2xl form__input--user">
                     <label for="" class="text-xl">Comfrm user</label></div>
                 
-                    <div>   <input type="password" class="bg-white block w-40 py-1 rounded-2xl">
+                    <div class="flex flex-col items-center">   <input type="password" class="px-4 font-semibold focus:border-amber-100 bg-white block w-40 py-1 rounded-2xl form__input--pin ">
                         <label for="" class="text-xl">comform password</label></div>
              
-                <button class=" px-4 py-1">&rarr;</button>
+                <button class="cursor-pointer px-4 py-1 form__btn--close text-white">&rarr;</button>
             </form>
         </div>
     </div>
 </div>
 
 
-<div class="flex justify-between pt-8">
+<div class="flex justify-between flex-wrap pt-8 gap-5">
     <div class="flex gap-2">
-    <p>IN <span>200$</span></p>
-    <p>OUT <span>400$</span></p>
-    <p>INTEREST <span>600$</span></p>
+    <p class="text-xl ">IN <span class="summary__value--in font-semibold ">200$,</span></p>
+    <p class="text-xl">OUT <span class="summary__value--out font-semibold">400$,</span></p>
+    <p class="text-xl">INTEREST <span class="summary__value--interest font-semibold">600$</span></p>
 </div>
-<button>sort</button>
+<button class="font-semibold text-xl cursor-pointer btn--sort bg-close1 px-5 rounded-2xl text-white w-25">sort</button>
 
-<p>You will be logged out in <span>05:00</span></p>
+<p>You will be logged out in <span class="font-bold timer">05:00</span></p>
 </div>
 
    </section>
 
    
+
+   <script src="index.js"></script>
 </body>
 </html>
