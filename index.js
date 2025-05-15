@@ -59,6 +59,28 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+
+//date
+const now = new Date();
+const year = now.getFullYear();
+const day = now.getDay();
+const month = now.getMonth() + 1;
+const hour = now.getHours();
+const min = now.getMinutes();
+
+labelDate.textContent=`${day}/${month}/${year}, ${hour}:${min}`;
+
+const displayDate =()=>{
+const now = new Date();
+const year = now.getFullYear();
+const day = now.getDay();
+const month = now.getMonth() + 1;
+const hour = now.getHours();
+const min = now.getMinutes();
+
+labelDate.textContent=`${day}/${month}/${year}, ${hour}:${min}`;
+}
+
 //username   
 const Username = function(accs) {
     accs.forEach(function(acc) {
@@ -69,11 +91,14 @@ Username(accounts);
 
   //all movements
 const displayMovement= function(movements){
+  
+
+
     containerMovements.innerHTML='';
     movements.forEach(function(mov,i){
   const type =mov>0?'deposit':'withdraw';
   if(type==='deposit'){
-    const html=` <div class="flex border-b-1 border-black p-10  gap-30">
+    const html=` <div class="flex border-b-1 border-black p-10  gap-30 mov">
          
     <div class="text-sm  font-semibold text-center bg-gradient-to-t from-deposit to-deposit1 rounded-full px-3 pt-1 text-white ${type}">
 ${i+1} ${type}
@@ -84,9 +109,10 @@ ${i+1} ${type}
     </div>
 </div>`;
 containerMovements.insertAdjacentHTML('afterbegin',html);
+
   }
 else {
-    const html=` <div class="flex border-b-1 border-black p-10  gap-30">
+    const html=` <div class="flex border-b-1 border-black p-10  gap-30 mov">
          
     <div class="text-sm font-semibold text-center bg-gradient-to-t from-withdraw to-withdraw1 px-3 rounded-full text-white pt-1 ${type}">
 ${i+1} ${type}
@@ -130,13 +156,13 @@ displayMovement(acc.movements);
   displaySummary(acc);
 
 }
-   let currentAccount;
+   let currentAccount, timer;
 
 
    //login
    btnLogin.addEventListener('click',function(e){
     e.preventDefault();
-    
+    logoutTime();
      currentAccount = accounts.find(acc=> 
         acc.username=== inputLoginUsername.value
      );
@@ -193,11 +219,20 @@ updateUi(currentAccount);
     const amount = Number(inputLoanAmount.value);
    //check if i satisfy to request loan
     if(amount>0 && currentAccount.movements.some(mov=> mov >= amount*0.1)){
+
+      setTimeout(function(){
+
+      
       currentAccount.movements.push(amount);
 
       updateUi(currentAccount);
+        //if (timer) clearInterval(timer);
+   // timer = logoutTime();
+      }, 5500);
     }
      inputLoanAmount.value='';
+
+     
    });
 
 
@@ -214,6 +249,37 @@ btnSort.addEventListener('click', function () {
   displayMovement(sortedMovements);
 });
 
+
+
+[...document.querySelectorAll('.mov')].forEach(function(mov,i){
+
+   if(i%2===0){
+  mov.style.backgroundColor='yellow';
+   }
+});
+
+
+//set time out  
+
+const logoutTime = function(){
+
+  let time = 120;
+
+  const timer=setInterval(function(){
+
+    const min = String(Math.trunc(time/60)).padStart(2,0);
+    const sec = String(time % 60).padStart(2,0);
+    labelTimer.textContent=`${min}:${sec}`;
+    time--;
+
+    if(time===0){
+      clearInterval(timer);
+      containerApp.classList.add('hidden');
+      labelWelcome.textContent='login to get started'
+    }
+  
+  },1000)
+}
 
 
 
